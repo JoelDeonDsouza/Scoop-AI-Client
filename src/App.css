@@ -1,0 +1,54 @@
+.App {
+  text-align: center;
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #8EA7E9;
+  color: #FFF2F2;
+}
+.sidebar-menu{
+  width: 260px;
+  padding: 10px;
+  background-color: #7286D3;
+}
+.sidebar-menu-create{
+  padding: 12px;
+  border: 1px solid #FFF2F2;
+  border-radius: 6px;
+  transition: ease 0.25s all;
+}
+.sidebar-menu-create:hover{
+  background-color: #3B3486;
+}
+.sidebar-menu-create span{
+  padding-right: 4px;
+}
+.add-text{
+  font-size: 21px;
+}
+/* Search container */
+.search-container{
+  flex:1;
+  position: relative;
+  background-color: #8EA7E9;
+}
+.search-input-container{
+  position: absolute;
+  margin: 24px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.search-input-text-field{
+  width: 90%;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  padding: 12px;
+  background-color: #E5E0FF;
+  box-shadow: rgba(0, 0, 0, 0.1), -4px 9px 25px -6px;
+  font-size: 19px;
+}
