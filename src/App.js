@@ -1,7 +1,18 @@
+import React, { useState } from "react"
 import './App.css';
 import "./normal.css"
+import ChatResponse from "./Component/ChatResponse"
 
 function App() {
+  const [input, setInput] = useState("");
+  const [aiLogs, setAiLogs] = useState("");
+  // submit function//
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setAiLogs([...aiLogs, { user: "user", message: `${input}` }])
+    setInput(" ");
+  }
+  // submit function//
   return (
     <div className="App">
       <aside className="sidebar-menu">
@@ -13,15 +24,7 @@ function App() {
       {/* Search Section */}
       <section className="search-container">
         <div className="response-log">
-          <div className="response-massage">
-            <div className="response-massage-center">
-              <div className="avatar">
-              </div>
-              <div className="message">
-                Hello World
-                </div>
-            </div>
-          </div>
+          <ChatResponse message={massage} />
           <div className="response-massage ai-response">
             <div className="response-massage-center">
               <div className="avatar ai-response">
@@ -44,7 +47,9 @@ function App() {
           </div>
         </div>
         <div className="search-input-container">
-          <input rows="1" className="search-input-text-field" placeholder="Scoop here" />
+          <form onSubmit={handleSubmit}>
+            <input rows="1" className="search-input-text-field" placeholder="Scoop here" value={input} onChange={() => setInput(input) = e.target.value} />
+          </form>
         </div>
       </section>
     </div>
